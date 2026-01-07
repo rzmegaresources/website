@@ -14,7 +14,8 @@
 
   --radius: 18px;
   --radius2: 26px;
-  --max: 1120px;
+  --max: clamp(1120px, 86vw, 1480px);
+  --nav-max: clamp(720px, 72vw, 1080px);
 }
 
 *{ box-sizing:border-box; }
@@ -39,6 +40,7 @@ body{
 }
 body.is-ready{ opacity: 1; }
 body.is-leaving{ opacity: 0; }
+
 
 a{ color:inherit; text-decoration:none; }
 img{ max-width:100%; display:block; }
@@ -154,7 +156,12 @@ body::before{
   min-height: 72vh;
   display:flex;
   align-items:flex-end;
-  padding: 34px 0 46px;
+  padding: 120px 0 46px;
+}
+.hero .container{
+  max-width: none;
+  padding-left: 0;
+  padding-right: clamp(36px, 12vw, 180px);
 }
 .hero::before{
   content:"";
@@ -162,7 +169,7 @@ body::before{
   inset:-60px -60px 0 -60px;
   background:
     linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.75)),
-    url("../img/hero.jpg") center/cover no-repeat;
+    url("../img/bg.jpg") center/cover no-repeat;
   filter: saturate(1.02) contrast(1.02);
   z-index:-2;
 
@@ -178,6 +185,28 @@ body::before{
     radial-gradient(900px 500px at 30% 20%, rgba(0,0,0,.0), rgba(0,0,0,.72)),
     radial-gradient(700px 450px at 78% 30%, rgba(255,138,61,.08), transparent 60%);
   z-index:-1;
+}
+
+body[data-page="about"] .section:first-of-type{
+  position: relative;
+  overflow: hidden;
+}
+main > .section:first-of-type:not(.hero){
+  padding-top: 120px;
+}
+body[data-page="about"] .section:first-of-type::before{
+  content:"";
+  position:absolute;
+  inset:-60px -40px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.78)),
+    url("../img/bg.jpg") center/cover no-repeat;
+  filter: saturate(1.02) contrast(1.02);
+  z-index: 0;
+}
+body[data-page="about"] .section:first-of-type > .container{
+  position: relative;
+  z-index: 1;
 }
 
 .heroCard{
@@ -449,15 +478,16 @@ textarea.input{ min-height: 140px; resize: vertical; }
 }
 
 /* Add spacing so content doesn't hide under fixed nav */
-main{ padding-top: 96px; }
+main{ padding-top: 0; }
 
 /* Turn your existing .nav into the pill bar */
 .topbar .nav{
-  max-width: 980px;
+  max-width: var(--nav-max);
+  width: fit-content;
   margin: 0 auto;
-  padding: 14px 18px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(110, 120, 126, .26);           /* frosted grey */
+  background: rgba(110, 120, 126, .26);
   border: 1px solid rgba(255,255,255,.14);
   backdrop-filter: blur(18px);
   box-shadow: 0 18px 55px rgba(0,0,0,.45);
@@ -470,13 +500,15 @@ main{ padding-top: 96px; }
 /* Brand on left (keep same content) */
 .topbar .brand{
   min-width: unset;
-  gap: 10px;
+  gap: 6px;
 }
 .topbar .brand img{
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
 }
+.topbar .brandText{ display:flex; flex-direction:column; }
+.topbar .brandText.is-hidden{ display:none; }
 .topbar .brand .name{
   font-weight: 800;
   letter-spacing: .2px;
@@ -489,15 +521,16 @@ main{ padding-top: 96px; }
 .topbar .menu{
   flex: 1;
   justify-content: center;
-  gap: 18px;
+  gap: 6px;
   display: flex;
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(255,255,255,.80);
+  margin-left: 26px;
 }
 
 /* Menu links: clean + subtle hover */
 .topbar .menu a{
-  padding: 10px 12px;
+  padding: 5px 8px;
   border-radius: 999px;
   border: 1px solid transparent;
   transition: background .2s ease, border-color .2s ease, color .2s ease;
@@ -510,13 +543,13 @@ main{ padding-top: 96px; }
 
 /* Right-side actions */
 .topbar .actions{
-  gap: 10px;
+  gap: 6px;
 }
 
 /* Make CTA look like mx pill button */
 .topbar .btn{
   border-radius: 999px;
-  padding: 10px 14px;
+  padding: 7px 12px;
   font-weight: 700;
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.16);
@@ -528,9 +561,9 @@ main{ padding-top: 96px; }
 
 /* Make primary CTA lighter (mx style) */
 .topbar .btn.primary{
-  background: rgba(255,255,255,.22);
-  border-color: rgba(255,255,255,.22);
-  color: #0b0f14;
+  background: linear-gradient(180deg, rgba(239,68,68,.98), rgba(239,68,68,.70));
+  border-color: rgba(239,68,68,.45);
+  color: #fff;
   font-weight: 900;
 }
 
@@ -546,7 +579,7 @@ main{ padding-top: 96px; }
   }
   .topbar .nav{
     max-width: calc(100% - 22px);
-    padding: 12px 12px;
+    padding: 10px 10px;
   }
   .topbar .menu{ display:none; }
   .topbar .burger{ display:inline-flex; }

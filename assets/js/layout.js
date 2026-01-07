@@ -22,6 +22,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ MEGA RESOURCES',
+    hideBrandText: true,
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
       FOOTER_LINKS.about,
@@ -40,6 +41,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
+    hideBrandText: true,
     footerLogoAlt: '',
     footerPages: [
       FOOTER_LINKS.services,
@@ -54,6 +56,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
+    hideBrandText: true,
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
       FOOTER_LINKS.about,
@@ -68,6 +71,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
+    hideBrandText: true,
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
       FOOTER_LINKS.about,
@@ -82,6 +86,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
+    hideBrandText: true,
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
       FOOTER_LINKS.about,
@@ -96,6 +101,7 @@ const PAGE_CONFIG = {
     mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: '',
     headerLogoAlt: 'RZ Mega Resources',
+    hideBrandText: true,
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
       FOOTER_LINKS.about,
@@ -138,7 +144,7 @@ function injectSharedLayout() {
     <div class="nav">
       <a class="brand" href="index.html">
         <img src="assets/img/logo.png" alt="${config.headerLogoAlt}"/>
-        <div>
+        <div class="${config.hideBrandText ? 'brandText is-hidden' : 'brandText'}">
           <div class="name">RZ MEGA RESOURCES</div>
           <div class="tag">Multi-brand business group</div>
         </div>
