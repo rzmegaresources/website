@@ -50,8 +50,8 @@ const PAGE_CONFIG = {
     footerYearStyle: 'margin-top:10px;'
   },
   services: {
-    nav: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
-    mobile: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
+    nav: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
+    mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
     footerLogoAlt: 'RZ Mega Resources',
@@ -64,8 +64,8 @@ const PAGE_CONFIG = {
     footerYearStyle: 'margin-top:10px;'
   },
   blog: {
-    nav: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
-    mobile: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
+    nav: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
+    mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
     footerLogoAlt: 'RZ Mega Resources',
@@ -78,8 +78,8 @@ const PAGE_CONFIG = {
     footerYearStyle: 'margin-top:10px;'
   },
   portfolio: {
-    nav: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
-    mobile: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
+    nav: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog],
+    mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
     headerCtaHref: 'contact.html#book',
     headerLogoAlt: 'RZ Mega Resources',
     footerLogoAlt: 'RZ Mega Resources',
@@ -92,9 +92,9 @@ const PAGE_CONFIG = {
     footerYearStyle: 'margin-top:10px;'
   },
   contact: {
-    nav: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
-    mobile: [LINKS.home, LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
-    headerCtaHref: '#book',
+    nav: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
+    mobile: [LINKS.about, LINKS.services, LINKS.portfolio, LINKS.blog, LINKS.contact],
+    headerCtaHref: '',
     headerLogoAlt: 'RZ Mega Resources',
     footerLogoAlt: 'RZ Mega Resources',
     footerPages: [
@@ -130,6 +130,9 @@ function injectSharedLayout() {
   const footer = document.querySelector('[data-shared="footer"]');
 
   if (header) {
+    const headerCta = config.headerCtaHref
+      ? `<a class="btn primary" href="${config.headerCtaHref}">Contact us</a>`
+      : '';
     header.innerHTML = `
   <div class="container">
     <div class="nav">
@@ -146,7 +149,7 @@ function injectSharedLayout() {
       </nav>
 
       <div class="actions">
-        <a class="btn primary" href="${config.headerCtaHref}">Contact us</a>
+        ${headerCta}
         <button class="btn burger" data-burger aria-label="Menu">ƒ~ø</button>
       </div>
     </div>
