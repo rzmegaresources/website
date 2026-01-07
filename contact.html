@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Contact — RZ Mega Resources</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="contact">
+<canvas id="particles"></canvas>
+
+<header class="topbar">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="RZ Mega Resources"/>
+        <div>
+          <div class="name">RZ Mega Resources</div>
+          <div class="tag">Multi-brand business group</div>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="services.html" data-nav="services">Services</a>
+        <a href="portfolio.html" data-nav="portfolio">Gallery / Portfolio</a>
+        <a href="blog.html" data-nav="blog">Blog</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn" href="contact.html">Get inquiry</a>
+        <a class="btn primary" href="#book">Book appointment</a>
+        <button class="btn burger" data-burger aria-label="Menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" data-mobile-menu>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Gallery / Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" data-animate>
+    <div class="container grid2">
+      <div class="panel block">
+        <div class="kicker"><span class="dot"></span> CONTACT</div>
+        <h1 style="margin:14px 0 10px;">Let’s talk.</h1>
+        <p style="margin:0;color:var(--muted);max-width:62ch;">
+          Send a short inquiry with the brand name and what you need. We’ll reply with next steps.
+        </p>
+
+        <hr class="hr"/>
+
+        <div class="grid3" data-stagger>
+          <div class="card">
+            <div class="body">
+              <div class="meta">Email</div>
+              <h3>hello@rzmegaresources.com</h3>
+              <p>Best for detailed requests.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="body">
+              <div class="meta">WhatsApp</div>
+              <h3>+60 XX-XXXX XXXX</h3>
+              <p>Fast questions & quick coordination.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="body">
+              <div class="meta">Booking</div>
+              <h3>Appointment</h3>
+              <p>Use the booking section below.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="panel">
+        <div class="media" style="aspect-ratio: 4/5;">
+          <img src="assets/img/p4.jpg" alt="Contact showcase"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <div class="container panel">
+      <div class="split">
+        <div class="block">
+          <h2 style="margin:0 0 10px;">Send inquiry</h2>
+          <p style="margin:0;color:var(--muted);max-width:60ch;">
+            This form works locally. When you go live, connect Formspree / Netlify Forms to receive submissions.
+          </p>
+
+          <form class="form" style="margin-top:14px;" onsubmit="event.preventDefault(); alert('Saved! (Connect Formspree/Netlify later for real submissions)');">
+            <input class="input" placeholder="Your name" required/>
+            <input class="input" placeholder="Your email" type="email" required/>
+
+            <select class="input">
+              <option value="">Select brand (optional)</option>
+              <option>WSS Creative Studio</option>
+              <option>RZ Kitchen</option>
+              <option>Masterpips Academy</option>
+              <option>MRX Consulting</option>
+            </select>
+
+            <textarea class="input" placeholder="Tell us what you need…" required></textarea>
+
+            <button class="btn primary" type="submit">Send inquiry →</button>
+          </form>
+        </div>
+
+        <div class="media" style="aspect-ratio: 16/10; border-radius: 0 26px 26px 0;">
+          <img src="assets/img/p2.jpg" alt="Form"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="book" data-animate>
+    <div class="container panel">
+      <div class="split">
+        <div class="block">
+          <h2 style="margin:0 0 10px;">Book appointment</h2>
+          <p style="margin:0;color:var(--muted);max-width:60ch;">
+            Add your Calendly link (or WhatsApp booking). Replace the placeholder below.
+          </p>
+
+          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="#" onclick="alert('Paste your booking link here'); return false;">Open booking →</a>
+            <a class="btn" href="https://wa.me/60123456789" target="_blank" rel="noreferrer">WhatsApp booking →</a>
+          </div>
+
+          <p class="small" style="margin-top:14px;">
+            Later when live: we can embed Calendly directly on this page.
+          </p>
+        </div>
+
+        <div class="media" style="aspect-ratio: 16/10; border-radius: 0 26px 26px 0;">
+          <img src="assets/img/b1.jpg" alt="Booking"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footerGrid">
+    <div>
+      <div class="brand" style="padding:0;">
+        <img src="assets/img/logo.png" alt="RZ Mega Resources"/>
+        <div>
+          <div class="name">RZ Mega Resources</div>
+          <div class="tag">Credibility • Leads • Booking</div>
+        </div>
+      </div>
+      <p class="small" style="margin-top:10px;">© <span data-year></span> RZ Mega Resources</p>
+    </div>
+
+    <div>
+      <b>Pages</b><br/>
+      <a class="small" href="about.html">About</a><br/>
+      <a class="small" href="services.html">Services</a><br/>
+      <a class="small" href="portfolio.html">Portfolio</a><br/>
+      <a class="small" href="blog.html">Blog</a>
+    </div>
+
+    <div>
+      <b>Contact</b><br/>
+      <a class="small" href="mailto:hello@rzmegaresources.com">hello@rzmegaresources.com</a><br/>
+      <span class="small">WhatsApp: +60 XX-XXXX XXXX</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
