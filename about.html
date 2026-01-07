@@ -3,13 +3,45 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>About — RZ Mega Resources</title>
+  <title>About</title>
   <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body data-page="about">
 <canvas id="particles"></canvas>
 
-<header class="topbar" data-shared="header"></header>
+<header class="topbar">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="RZ Mega Resources"/>
+        <div>
+          <div class="name"></div>
+          <div class="tag">Multi-brand business group</div>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="about.html" data-nav="about">About</a>
+        <a href="services.html" data-nav="services">Services</a>
+        <a href="portfolio.html" data-nav="portfolio">Project</a>
+        <a href="blog.html" data-nav="blog">Blog</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn primary" href="contact.html#book">Contact us</a>
+        <button class="btn burger" data-burger aria-label="Menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobileMenu" data-mobile-menu>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Project</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
 
 <main>
   <section class="section" data-animate>
@@ -66,9 +98,34 @@
   </section>
 </main>
 
-<footer class="footer" data-shared="footer"></footer>
+<footer class="footer">
+  <div class="container footerGrid">
+    <div>
+      <div class="brand" style="padding:0;">
+        <img src="assets/img/logo.png" alt=""/>
+        <div>
+          <div class="name">RZ Mega Resources</div>
+          <div class="tag">Credibility • Leads • Booking</div>
+        </div>
+      </div>
+      <p class="small" style="margin-top:10px;">© <span data-year></span> RZ Mega Resources</p>
+    </div>
 
-<script src="assets/js/layout.js"></script>
+    <div>
+      <b>Pages</b><br/>
+      <a class="small" href="services.html">Services</a><br/>
+      <a class="small" href="portfolio.html">Portfolio</a><br/>
+      <a class="small" href="blog.html">Blog</a><br/>
+      <a class="small" href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <b>Contact</b><br/>
+      <a class="small" href="mailto:hello@rzmegaresources.com">hello@rzmegaresources.com</a><br/>
+      <span class="small">WhatsApp: +60 XX-XXXX XXXX</span>
+    </div>
+  </div>
+</footer>
 
 <script src="assets/js/main.js"></script>
 </body>
