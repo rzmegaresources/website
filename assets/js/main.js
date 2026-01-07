@@ -1,6 +1,10 @@
 // ------------------------
 // Page fade in/out
 // ------------------------
+if (window.injectSharedLayout) {
+  window.injectSharedLayout();
+}
+
 function markReady() {
   document.body.classList.add('is-ready');
 }
